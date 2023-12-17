@@ -15,7 +15,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="consolidatepy",
-    version="0.0.5",
+    version="0.0.6",
     description="A Python library for generating a list of strings with every possible combination of placements of a given string (or a zero-width non joiner by default) within another given string, up to a given maximum length of characters.",
     url="https://github.com/ThePilot4571/consolidate-py/", 
     author="ThePilot4571",
