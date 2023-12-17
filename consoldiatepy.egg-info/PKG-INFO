@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: consoldiatepy
-Version: 0.0.1
+Version: 0.0.2
 Summary: A Python library for generating a list of strings with every possible combination of placements of a given string (or a zero-width non joiner by default) within another given string, up to a given maximum length of characters.
 Home-page: https://github.com/ThePilot4571/consolidate-py/
 Author: ThePilot4571
