@@ -4,3 +4,5 @@ consolidatepy.egg-info/PKG-INFO
 consolidatepy.egg-info/SOURCES.txt
 consolidatepy.egg-info/dependency_links.txt
 consolidatepy.egg-info/top_level.txt
+main/__init__.py
+main/consolidatepy.py
