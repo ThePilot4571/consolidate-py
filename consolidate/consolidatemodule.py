@@ -1,10 +1,10 @@
 def consolidate(base, length, fill = "‌",):
     """
-    Generate a list of possible combinations where .
+    Returns an array of possible consolidations.
 
     :param str baseString: String to put fillerString within
     :param int maxLength: Max length of result string
-    :param str fillerString : String to put within baseString
+    :param str fillerChar : Character to consolidate with base, default ZWNJ
     :return: List of combinations
     :rtype: list
     """
@@ -17,5 +17,16 @@ def consolidate(base, length, fill = "‌",):
     for i in range(1, d+1):
         output.append(fill * i + base)
     return output
-        
-print(consolidate("hey", 3, "X")) 
+
+def count(base, length, fill = "‌",):
+    """
+    Returns the total amount of consolidations possible.
+
+    :param str baseString: String to put fillerString within
+    :param int maxLength: Max length of result string
+    :param str fillerString : String to put within baseString
+    :return: List of combinations
+    :rtype: list
+    """
+    fl = len(fill) #filler length
+    

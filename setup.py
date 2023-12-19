@@ -16,8 +16,8 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 setup(
     name="consolidate",
     version="0.0.3",
-    description="A Python library for generating a list of strings with every possible combination of placements of a given string (or a zero-width non joiner by default) within another given string, up to a given maximum length of characters.",
-    long_description="Consolidate A Python library for generating a list of strings with every possible combination of placements of a given string (or a zero-width non joiner by default) within another given string, up to a given maximum length of characters.",
+    description="A Python library for generating a list of strings with every possible combination of placements of a given character (or a zero-width non joiner by default) within another given string, up to a given maximum length of characters.",
+    long_description="Consolidate A Python library for generating a list of strings with every possible combination of placements of a given character (or a zero-width non joiner by default) within another given string, up to a given maximum length of characters.",
     long_description_content_type='text/markdown',
     url="https://github.com/ThePilot4571/consolidate-py/", 
     author="ThePilot4571",
