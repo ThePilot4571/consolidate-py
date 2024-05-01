@@ -34,5 +34,3 @@ def count(base, length, fill = "‌",):
     :rtype: list
     """
     fl = len(fill) #filler length
-    
-print(consolidate("tes",6,"."))
