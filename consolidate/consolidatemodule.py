@@ -8,15 +8,20 @@ def consolidate(base, length, fill = "‌",):
     :return: List of combinations
     :rtype: list
     """
+    loc = []
+    if len(base)==length:
+        return [base]
+    if len(base)<length:
+        for i in range(len(base)+1):
+            loc.append(base[:i] + fill + base[i:])
+    loc2 = [base]
+    for w in loc:
+        loc2.extend(consolidate(w, length, fill))
+    loc.extend(loc2)
+    return sorted(loc)
     # maybe add a "must match max length" bool as an input if user requires exact length, no less
-    if(length - len(base) < 0):
-        raise ValueError("Maximum length can't be less than length of base string")
-    output = []
-    d = length - len(base)
-    output.append(base)
-    for i in range(1, d+1):
-        output.append(fill * i + base)
-    return output
+    # add a warning if l - len(base) is > n to prevent huge run time 
+
 
 def count(base, length, fill = "‌",):
     """
@@ -30,3 +35,4 @@ def count(base, length, fill = "‌",):
     """
     fl = len(fill) #filler length
     
+print(consolidate("tes",6,"."))

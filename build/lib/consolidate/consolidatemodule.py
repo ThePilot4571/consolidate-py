@@ -1,36 +1,36 @@
-def consolidate(base, fill, len):
-    output = []
-    
+def consolidate(base, length, fill = "‌",):
     """
-    Generate a list of possible combinations where .
+    Returns an array of possible consolidations.
 
     :param str baseString: String to put fillerString within
-    :param str fillerString : String to put within baseString
     :param int maxLength: Max length of result string
+    :param str fillerChar : Character to consolidate with base, default ZWNJ
     :return: List of combinations
     :rtype: list
     """
+    loc = []
+    if len(base)==length:
+        return [base]
+    if len(base)<length:
+        for i in range(len(base)+1):
+            loc.append(base[:i] + fill + base[i:])
+    loc2 = [base]
+    for w in loc:
+        loc2.extend(consolidate(w, length, fill))
+    loc.extend(loc2)
+    return loc
     # maybe add a "must match max length" bool as an input if user requires exact length, no less
 
-def generate_combinations(s, length):
-    result = []
-    n = len(s)
 
-    # Loop through each position to insert '*'
-    for i in range(n + 1):
-        for j in range(length + 1):
-            new_str = s[:i] + '*' * j + s[i:]
-            
-            # Ensure the length of the new string is not greater than specified
-            if len(new_str) <= length:
-                result.append(new_str)
+def count(base, length, fill = "‌",):
+    """
+    Returns the total amount of consolidations possible.
 
-    return result
-
-# Example usage:
-input_string = "hello"
-max_length = 10
-combinations = generate_combinations(input_string, max_length)
-
-for combination in combinations:
-    print(combination)
+    :param str baseString: String to put fillerString within
+    :param int maxLength: Max length of result string
+    :param str fillerString : String to put within baseString
+    :return: List of combinations
+    :rtype: list
+    """
+    fl = len(fill) #filler length
+    
